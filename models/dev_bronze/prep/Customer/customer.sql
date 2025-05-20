@@ -12,3 +12,5 @@ with tt as (
     from dwh_dev_raw.raw.customer
 )
 select * from tt;
+
+

@@ -19,7 +19,5 @@ select
     b.ind as ind_b,
     b.user_id as user_b
 from customer  a
-join customer  b
-    on a.ind = b.ind;
-
+cross join customer  b
 
