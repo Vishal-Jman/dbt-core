@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: my_source
+    description: "Source for customer table"
+    database: dwh_dev_raw  # This is your catalog
+    schema: raw           # This is your schema
+    tables:
+      - name: customer      # This is your table name
+        description: "customer table in raw schema"
