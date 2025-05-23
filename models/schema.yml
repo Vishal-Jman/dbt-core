@@ -1,10 +1,28 @@
 version: 2
 
 sources:
-  - name: my_source
-    description: "Source for customer table"
-    database: dwh_dev_raw  # This is your catalog
-    schema: raw           # This is your schema
+  - name: dev_bronze_raw
+    description: "Source for raw schema in dev_bronze catalog"
+    database: dev_bronze
+    schema: raw
     tables:
-      - name: customer      # This is your table name
-        description: "customer table in raw schema"
+      - name: customer_1
+        description: "customer_1 table in raw schema under dev_bronze catalog"
+      - name: customer_2
+        description: "customer_2 table in raw schema under dev_bronze catalog"
+      - name: groups_1
+        description: "groups_1 table in raw schema under dev_bronze catalog"
+
+  - name: dev_bronze_prep
+    description: "Source for prep schema in dev_bronze catalog"
+    database: dev_bronze
+    schema: prep
+    tables:
+      - name: customers
+        description: "customers table in prep schema under dev_bronze catalog"
+      - name: lead_scoring
+        description: "lead_scoring table in prep schema under dev_bronze catalog"
+      - name: customers_2
+        description: "customers_2 table in prep schema under dev_bronze catalog"
+      - name: group
+        description: "group table in prep schema under dev_bronze catalog"
