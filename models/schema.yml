@@ -111,7 +111,7 @@ sources:
           - name: job_title
             description: "Job title."
 
-      - name: groups_1
+      - name: group
         description: "Cleaned user group data with roles and permissions."
         columns:
           - name: user_group_id

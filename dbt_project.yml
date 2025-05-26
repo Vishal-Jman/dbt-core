@@ -35,11 +35,13 @@ models:
     # Models that read from dev_bronze.raw and write to dev_bronze.prep
     dev_bronze:
       raw:
-        +materialized: table
         +database: dev_bronze
         +schema: prep
+        +materialized: table
 
       prep:
-        +materialized: table
         +database: dev_silver
         +schema: core
+        +materialized: table
+
+

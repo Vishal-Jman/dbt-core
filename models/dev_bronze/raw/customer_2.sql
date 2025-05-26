@@ -1,3 +1,5 @@
+
+
 WITH customer_2 AS (
     SELECT
         CAST(`index` AS INT) AS ind,  -- Ensure index is integer
