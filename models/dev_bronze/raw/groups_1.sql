@@ -1,3 +1,6 @@
+
+
+
 WITH groups_1 AS (
     SELECT
         TRIM(`user_group_id`) AS user_group_id,              -- Remove leading/trailing spaces
