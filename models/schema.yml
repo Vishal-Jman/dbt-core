@@ -2,27 +2,123 @@ version: 2
 
 sources:
   - name: dev_bronze_raw
-    description: "Source for raw schema in dev_bronze catalog"
+    description: "Source for raw schema in dev_bronze catalog, containing raw ingested data from upstream systems."
     database: dev_bronze
     schema: raw
     tables:
       - name: customer_1
-        description: "customer_1 table in raw schema under dev_bronze catalog"
+        description: "Raw customer data from source system 1 with personal and contact details."
+        columns:
+          - name: index
+            description: "Unique row index from source system."
+          - name: User Id
+            description: "Unique user identifier."
+          - name: First Name
+            description: "Customer's first name."
+          - name: Last Name
+            description: "Customer's last name."
+          - name: Gender
+            description: "Customer's gender."
+          - name: Email
+            description: "Customer's email address."
+          - name: Phone
+            description: "Customer's phone number."
+          - name: Date of birth
+            description: "Customer's date of birth."
+          - name: Job Title
+            description: "Customer's job title."
+
       - name: customer_2
-        description: "customer_2 table in raw schema under dev_bronze catalog"
+        description: "Raw customer data from source system 2, similar structure to customer_1."
+        columns:
+          - name: index
+            description: "Unique row index from source system."
+          - name: User Id
+            description: "Unique user identifier."
+          - name: First Name
+            description: "Customer's first name."
+          - name: Last Name
+            description: "Customer's last name."
+          - name: Gender
+            description: "Customer's gender."
+          - name: Email
+            description: "Customer's email address."
+          - name: Phone
+            description: "Customer's phone number."
+          - name: Date of birth
+            description: "Customer's date of birth."
+          - name: Job Title
+            description: "Customer's job title."
+
       - name: groups_1
-        description: "groups_1 table in raw schema under dev_bronze catalog"
+        description: "Raw user group data with permission and workspace details."
+        columns:
+          - name: user_group_id
+            description: "Identifier of the user group."
+          - name: display_name
+            description: "Display name of the group."
+          - name: permission
+            description: "Permission level for the group."
+          - name: workspace_name
+            description: "Workspace associated with the group."
 
   - name: dev_bronze_prep
-    description: "Source for prep schema in dev_bronze catalog"
+    description: "Source for prep schema in dev_bronze catalog, containing cleaned and transformed data ready for analysis."
     database: dev_bronze
     schema: prep
     tables:
-      - name: customers
-        description: "customers table in prep schema under dev_bronze catalog"
-      - name: lead_scoring
-        description: "lead_scoring table in prep schema under dev_bronze catalog"
-      - name: customers_2
-        description: "customers_2 table in prep schema under dev_bronze catalog"
-      - name: group
-        description: "group table in prep schema under dev_bronze catalog"
+      - name: customer_1
+        description: "Cleaned and standardized customer data merged from raw sources."
+        columns:
+          - name: ind
+            description: "Unique row identifier after cleaning."
+          - name: user_id
+            description: "Unique user identifier."
+          - name: first_name
+            description: "Customer's first name."
+          - name: last_name
+            description: "Customer's last name."
+          - name: gender
+            description: "Customer's gender."
+          - name: email
+            description: "Customer's email address."
+          - name: phone
+            description: "Customer's phone number."
+          - name: dob
+            description: "Customer's date of birth."
+          - name: job_title
+            description: "Customer's job title."
+
+      - name: customer_2
+        description: "Secondary cleaned customer dataset for validation and alternative analysis."
+        columns:
+          - name: ind
+            description: "Row identifier."
+          - name: user_id
+            description: "User identifier."
+          - name: first_name
+            description: "Customer first name."
+          - name: last_name
+            description: "Customer last name."
+          - name: gender
+            description: "Customer gender."
+          - name: email
+            description: "Email address."
+          - name: phone
+            description: "Phone number."
+          - name: dob
+            description: "Date of birth."
+          - name: job_title
+            description: "Job title."
+
+      - name: groups_1
+        description: "Cleaned user group data with roles and permissions."
+        columns:
+          - name: user_group_id
+            description: "Unique group identifier."
+          - name: display_name
+            description: "Group display name."
+          - name: permission
+            description: "Group permission level."
+          - name: workspace_name
+            description: "Workspace associated with group."
